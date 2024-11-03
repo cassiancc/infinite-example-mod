@@ -41,5 +41,4 @@ hs_err_*.log
 replay_*.log
 *.hprof
 *.jfr
-*.jar
 run/config/fabric/indigo-renderer.properties
