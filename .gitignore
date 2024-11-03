@@ -29,11 +29,8 @@ bin/
 
 # fabric
 
-run/mods
-run/logs
-run/saves
-run/resourcepacks
-run/options.txt
+run/
+!run/config/fabric_loader_dependencies.json
 
 # java
 
@@ -41,4 +38,3 @@ hs_err_*.log
 replay_*.log
 *.hprof
 *.jfr
-run/config/fabric/indigo-renderer.properties
