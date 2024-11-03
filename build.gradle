@@ -25,10 +25,14 @@ repositories {
 		}
 	}
 	//Modrinth Maven, for mods on Modrinth without mavens.
-	maven {
-		name = "Modrinth"
-		url = "https://api.modrinth.com/maven"
-		content {
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = "Modrinth"
+				url = "https://api.modrinth.com/maven"
+			}
+		}
+		filter {
 			includeGroup "maven.modrinth"
 		}
 	}
@@ -41,16 +45,17 @@ repositories {
 			includeGroup "mcp.mobius.waila"
 		}
 	}
-	//Cassian's Maven, for Fabric Item API and Cloth Config
+	//Cassian's Maven, for Fabric Item API
 	maven {
 		name = "cassiancc maven"
 		url = "https://maven.cassian.cc"
 	}
-	//shedaniel maven, for CLoth Basic Math
+	//shedaniel maven, for Cloth Config
 	maven {
 		name = "shedaniel"
-		url = "https://maven.shedaniel.me"
+		url = "https://maven.shedaniel.me/"
 	}
+
 
 }
 
@@ -70,11 +75,12 @@ dependencies {
 	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
 	// HWYLA
 	modImplementation "maven.modrinth:hwyla:${project.hwyla_version}-fabric"
-	// Cloth Config
+	// Cloth Config and dependencies
 	modApi("me.shedaniel.cloth:config-2:${project.cloth_version}") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-	modApi("me.shedaniel.cloth:basic-math:+")
+	modApi("me.shedaniel.cloth:cloth-events:${project.cloth_events_version}")
+
 
 }
 

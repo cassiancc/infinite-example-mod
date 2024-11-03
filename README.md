@@ -7,5 +7,4 @@ This is a modified version of the Fabric Template Mod, generated from <https://f
   - Fabric Item API via cassian.cc maven
 - [Mod Menu](https://github.com/TerraformersMC/ModMenu/tree/912197354bc6d14a9dc20d073210729102a2fb90?tab=readme-ov-file) via Terraformers Maven
 - [HWYLA](https://github.com/TehNut-Mods/HWYLA/tree/1.16_fabric) via Modrinth Maven
-- Cloth Config via cassian.cc maven
-  - Cloth Math via shedaniel maven
+- Cloth Config via shedaniel maven
