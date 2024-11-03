@@ -29,6 +29,8 @@
 		"fabric": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"modmenu": "*",
+		"cloth-config2": "*",
+		"hwyla": "*"
 	}
 }
