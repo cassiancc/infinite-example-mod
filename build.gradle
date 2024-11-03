@@ -40,6 +40,10 @@ repositories {
 			includeGroup "mcp.mobius.waila"
 		}
 	}
+	//Cassian's Maven, for Fabric Item API
+	maven {
+		url "https://maven.cassian.cc"
+	}
 }
 
 dependencies {
@@ -52,6 +56,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	// Fabric API
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	// Fabric API - Item API
+	modImplementation "net.fabricmc.fabric:fabric-item-api-v1:${project.fabric_item_api_version}"
 	// Mod Menu
 	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
 	// HWYLA
