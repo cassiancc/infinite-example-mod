@@ -8,3 +8,7 @@ This is a modified version of the Fabric Template Mod, generated from <https://f
 - [Mod Menu](https://github.com/TerraformersMC/ModMenu/tree/912197354bc6d14a9dc20d073210729102a2fb90?tab=readme-ov-file) via Terraformers Maven
 - [HWYLA](https://github.com/TehNut-Mods/HWYLA/tree/1.16_fabric) via Modrinth Maven
 - Cloth Config via shedaniel maven
+  - Cloth Events
+  - AutoConfig
+  - Cloth Basic Math
+- [Roughly Enough Items](https://github.com/shedaniel/RoughlyEnoughItems/tree/172897ef31c38871d0e0274bcd36db8f71254ba3) via Curse Maven

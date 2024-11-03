@@ -36,6 +36,17 @@ repositories {
 			includeGroup "maven.modrinth"
 		}
 	}
+	// Curse maven, for REI
+	exclusiveContent {
+		forRepository {
+			maven {
+				url "https://cursemaven.com"
+			}
+		}
+		filter {
+			includeGroup "curse.maven"
+		}
+	}
 	//badasintended Maven, for WTHIT and Bad Packets
 	maven {
 		name = "badasintended"
@@ -62,26 +73,39 @@ repositories {
 dependencies {
 	// To change the versions see the gradle.properties file. Unused libraries should be commented out.
 	// Minecraft
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	minecraft("com.mojang:minecraft:${project.minecraft_version}")
 	// Yarn mappings
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	mappings("net.fabricmc:yarn:${project.yarn_mappings}:v2")
+
 	// Fabric Loader
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation("net.fabricmc:fabric-loader:${project.loader_version}")
 	// Fabric API
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
 	// Fabric API - Item API
-	modImplementation "net.fabricmc.fabric:fabric-item-api-v1:${project.fabric_item_api_version}"
+	modImplementation("net.fabricmc.fabric:fabric-item-api-v1:${project.fabric_item_api_version}")
+
 	// Mod Menu
-	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
+	modImplementation("io.github.prospector:modmenu:${project.modmenu_version}")
+
 	// HWYLA
-	modImplementation "maven.modrinth:hwyla:${project.hwyla_version}-fabric"
-	// Cloth Config and dependencies
+	modImplementation("maven.modrinth:hwyla:${project.hwyla_version}-fabric")
+
+	// Cloth Config, Events, and AutoConfig
 	modApi("me.shedaniel.cloth:config-2:${project.cloth_version}") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 	modApi("me.shedaniel.cloth:cloth-events:${project.cloth_events_version}")
+	modApi("me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}")
 
+	// Roughly Enough Items (REI)
+	modImplementation("curse.maven:rei-310111:${project.rei_version}")
 
+}
+
+configurations.all {
+	resolutionStrategy {
+		force("net.fabricmc:fabric-loader:$loader_version")
+	}
 }
 
 processResources {
