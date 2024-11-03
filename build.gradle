@@ -34,16 +34,24 @@ repositories {
 	}
 	//badasintended Maven, for WTHIT and Bad Packets
 	maven {
-		url "https://maven2.bai.lol"
+		name = "badasintended"
+		url = "https://maven2.bai.lol"
 		content {
 			includeGroup "lol.bai"
 			includeGroup "mcp.mobius.waila"
 		}
 	}
-	//Cassian's Maven, for Fabric Item API
+	//Cassian's Maven, for Fabric Item API and Cloth Config
 	maven {
-		url "https://maven.cassian.cc"
+		name = "cassiancc maven"
+		url = "https://maven.cassian.cc"
 	}
+	//shedaniel maven, for CLoth Basic Math
+	maven {
+		name = "shedaniel"
+		url = "https://maven.shedaniel.me"
+	}
+
 }
 
 dependencies {
@@ -62,6 +70,12 @@ dependencies {
 	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
 	// HWYLA
 	modImplementation "maven.modrinth:hwyla:${project.hwyla_version}-fabric"
+	// Cloth Config
+	modApi("me.shedaniel.cloth:config-2:${project.cloth_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+	modApi("me.shedaniel.cloth:basic-math:+")
+
 }
 
 processResources {
