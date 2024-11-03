@@ -23,7 +23,7 @@
 		"template-mod.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.9",
+		"fabricloader": ">=0.15.11",
 		"minecraft": ">=1.16-alpha.20.13.inf",
 		"java": ">=8",
 		"fabric": "*"
